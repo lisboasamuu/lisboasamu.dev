@@ -144,15 +144,7 @@ export const projects: Project[] = [
 
 export const experiences: Experience[] = [
   {
-    period: "2026 — PRESENT",
-    role: "ESPECIALISTA DE MELHORIA CONTÍNUA",
-    company: "TOOLS DS | Santander Brasil",
-    summary:
-      "Atuação em automação de processos, inteligência artificial e eficiência operacional, desenvolvendo soluções tecnológicas voltadas à redução de atividades manuais e otimização de fluxos.",
-    tags: ["AUTOMATION", "PYTHON", "AI", "PROCESS IMPROVEMENT"],
-  },
-  {
-    period: "2025 — JAN 2026",
+    period: "2025 — PRESENT",
     role: "ESPECIALISTA DE OPERAÇÕES",
     company: "TOOLS DS | Santander Brasil",
     summary:

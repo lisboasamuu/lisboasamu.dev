@@ -41,21 +41,33 @@ export function ProjectList({ compact = false }: ProjectListProps) {
             </div>
 
             {project.media?.length ? (
-              <div className="project-media">
-                {project.media.map((media, mediaIndex) => (
-                  <figure
-                    key={media.src}
-                    className={mediaIndex === 0 ? "project-shot project-shot-featured" : "project-shot"}
-                  >
-                    <Image
-                      src={media.src}
-                      alt={media.alt}
-                      width={1600}
-                      height={1000}
-                      sizes="(max-width: 760px) 100vw, (max-width: 1200px) 75vw, 980px"
-                    />
-                  </figure>
-                ))}
+              <div
+                className={`project-media${project.media.length === 1 ? " project-media-single" : ""}`}
+              >
+                {project.media.map((media, mediaIndex) => {
+                  const isSingleMedia = project.media?.length === 1;
+
+                  return (
+                    <figure
+                      key={media.src}
+                      className={
+                        isSingleMedia
+                          ? "project-shot project-shot-single"
+                          : mediaIndex === 0
+                            ? "project-shot project-shot-featured"
+                            : "project-shot"
+                      }
+                    >
+                      <Image
+                        src={media.src}
+                        alt={media.alt}
+                        width={isSingleMedia ? 2048 : 1600}
+                        height={isSingleMedia ? 682 : 1000}
+                        sizes="(max-width: 760px) 100vw, (max-width: 1200px) 75vw, 980px"
+                      />
+                    </figure>
+                  );
+                })}
               </div>
             ) : (
               <div className="project-placeholder" aria-hidden="true">

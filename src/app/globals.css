@@ -318,50 +318,40 @@ button:focus-visible {
 }
 
 .hero-identity {
+  position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) clamp(120px, 15vw, 210px);
-  gap: clamp(1rem, 3vw, 2.5rem);
+  grid-template-columns: minmax(0, 1fr) clamp(220px, 24vw, 350px);
+  gap: clamp(0.5rem, 2vw, 2rem);
   align-items: end;
+}
+
+.hero-identity h1 {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-portrait {
   position: relative;
-  margin: 0 0 0.5rem;
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--highlight) 42%, transparent);
-  background:
-    radial-gradient(circle at 50% 65%, rgba(93, 0, 24, 0.5), transparent 52%),
-    linear-gradient(160deg, #252628, #19171b 70%);
-  box-shadow: 0 0 42px rgba(93, 0, 24, 0.24);
-}
-
-.hero-portrait::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  box-shadow: inset 0 0 0 1px rgba(255, 165, 134, 0.16);
-  pointer-events: none;
+  z-index: 1;
+  width: 100%;
+  margin: 0;
+  align-self: end;
+  justify-self: end;
+  overflow: visible;
+  filter: drop-shadow(0 24px 34px rgba(0, 0, 0, 0.28));
 }
 
 .hero-portrait img {
+  display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: contain;
   object-position: center bottom;
   filter: saturate(0.98) contrast(1.02);
 }
 
 .hero-portrait figcaption {
-  position: absolute;
-  left: 0.7rem;
-  bottom: 0.65rem;
-  padding: 0.3rem 0.42rem;
-  background: rgba(23, 28, 47, 0.82);
-  color: var(--highlight);
-  font-family: var(--font-mono), monospace;
-  font-size: 0.52rem;
-  letter-spacing: 0.08em;
+  display: none;
 }
 
 .hero-nickname {
@@ -717,6 +707,25 @@ button:focus-visible {
   grid-row: span 2;
 }
 
+.project-media-single {
+  grid-template-columns: 1fr;
+}
+
+.project-shot-single {
+  grid-column: 1 / -1;
+  overflow: visible;
+  background: #0a0a0a;
+}
+
+.project-shot-single img {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  object-fit: contain;
+  object-position: center;
+}
+
 .project-shot img {
   display: block;
   width: 100%;
@@ -729,6 +738,12 @@ button:focus-visible {
 
 .project-shot-featured img {
   min-height: 360px;
+}
+
+.project-media-single .project-shot-single img {
+  height: auto;
+  min-height: 0;
+  object-fit: contain;
 }
 
 .project-shot:hover img {
@@ -1483,8 +1498,14 @@ button:focus-visible {
   }
 
   .hero-identity {
-    grid-template-columns: minmax(0, 1fr) 115px;
-    align-items: center;
+    grid-template-columns: 1fr;
+    align-items: end;
+  }
+
+  .hero-portrait {
+    width: clamp(150px, 43vw, 210px);
+    margin-top: -2.3rem;
+    margin-right: 0.25rem;
   }
 
   .hero-nickname {
@@ -1642,13 +1663,15 @@ button:focus-visible {
   }
 
   .hero-identity {
-    grid-template-columns: 1fr 88px;
-    gap: 0.6rem;
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 
   .hero-portrait {
-    margin-bottom: 0;
-    box-shadow: 0 0 24px rgba(93, 0, 24, 0.2);
+    width: min(47vw, 185px);
+    margin-top: -1.8rem;
+    margin-right: 0;
+    filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.24));
   }
 
   .random-fact-button {
@@ -1671,6 +1694,11 @@ button:focus-visible {
   .project-shot img,
   .project-shot-featured img {
     min-height: 190px;
+  }
+
+  .project-media-single .project-shot-single img {
+    min-height: 0;
+    height: auto;
   }
 
   .composer-footer {
