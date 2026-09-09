@@ -3,6 +3,7 @@ import Image from "next/image";
 import { CvButton } from "@/components/cv-button";
 import { EmailComposer } from "@/components/email-composer";
 import { ProjectList } from "@/components/project-list";
+import { RandomFact } from "@/components/random-fact";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { SiteFooter } from "@/components/site-footer";
@@ -38,10 +39,10 @@ export default function HomePage() {
                 </h1>
                 <figure className="hero-portrait">
                   <Image
-                    src="/images/profile/samuel-lisboa.jpeg"
+                    src="/images/profile/samuel-lisboa.png"
                     alt="Retrato de Samuel Lisboa"
-                    width={1186}
-                    height={1326}
+                    width={1145}
+                    height={1374}
                     priority
                   />
                   <figcaption>PROFILE / 2026</figcaption>
@@ -107,16 +108,21 @@ export default function HomePage() {
             <div className="about-grid">
               <Reveal className="about-copy">
                 <p>
-                  Sou Samuel Lisboa, estudante de Engenharia de Software e
-                  profissional de Melhoria Contínua. Minha área de interesse está
-                  na interseção entre software, automação, inteligência artificial
-                  e operações.
+                  Sou Samuel Lisboa, nascido em Paracambi, Rio de Janeiro.
+                  Completamente apaixonado por tecnologia e por tudo que ela pode
+                  trazer a nós.
+                </p>
+                <p>
+                  Estudante de Engenharia de Software e profissional de Melhoria
+                  Contínua. Minha área de interesse está na interseção entre
+                  software, automação, inteligência artificial e operações.
                 </p>
                 <p>
                   Gosto de encontrar processos manuais, entender onde existe
                   desperdício e transformar essas necessidades em sistemas mais
                   simples, rápidos e confiáveis.
                 </p>
+                <RandomFact />
               </Reveal>
 
               <Reveal className="facts-grid" delay={0.08}>

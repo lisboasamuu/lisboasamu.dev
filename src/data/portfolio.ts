@@ -133,6 +133,12 @@ export const projects: Project[] = [
     stack: ["Web", "Software", "Automation", "AI", "Design"],
     year: "2026",
     status: "BUILDING",
+    media: [
+      {
+        src: "/images/projects/codigo-ns/banner.png",
+        alt: "Banner oficial da Código NS com identidade visual e áreas de atuação.",
+      },
+    ],
   },
 ];
 

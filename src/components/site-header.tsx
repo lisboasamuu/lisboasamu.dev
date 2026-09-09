@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { navigation } from "@/data/portfolio";
 import { siteConfig } from "@/lib/site";
@@ -9,7 +10,15 @@ export function SiteHeader() {
     <header className="site-header">
       <div className="shell nav-shell">
         <Link href="/" className="brand" aria-label="Samuel Lisboa — início">
-          <span className="brand-mark">//</span> LISBOA.SAMU
+          <Image
+            className="brand-logo"
+            src="/images/brand/samuel-mark.png"
+            alt=""
+            width={30}
+            height={30}
+            priority
+          />
+          <span><span className="brand-mark">//</span> LISBOA.SAMU</span>
         </Link>
 
         <nav className="desktop-nav" aria-label="Navegação principal">
