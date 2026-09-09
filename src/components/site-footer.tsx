@@ -10,7 +10,7 @@ export function SiteFooter() {
           <p>SOFTWARE ENGINEERING / AUTOMATION / AI</p>
         </div>
         <div>
-          <p>São Paulo, Brazil</p>
+          <p>Piracicaba, São Paulo — Brazil</p>
           <nav aria-label="Links sociais no rodapé">
             {socials.map((social) => (
               <a

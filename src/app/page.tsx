@@ -1,6 +1,7 @@
-import { ArrowDown, ArrowUpRight, Mail } from "lucide-react";
-import Link from "next/link";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import { CvButton } from "@/components/cv-button";
+import { EmailComposer } from "@/components/email-composer";
 import { ProjectList } from "@/components/project-list";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
@@ -25,15 +26,28 @@ export default function HomePage() {
           <div className="shell hero-shell">
             <div className="hero-topline">
               <span>SOFTWARE ENGINEERING / AUTOMATION / AI</span>
-              <span>SÃO PAULO — BRAZIL</span>
+              <span>PIRACICABA, SÃO PAULO — BRAZIL</span>
             </div>
 
             <div className="hero-title-wrap">
               <p className="hero-kicker">PERSONAL SPACE / 2026</p>
-              <h1 id="hero-title">
-                <span>SAMUEL</span>
-                <span>LISBOA</span>
-              </h1>
+              <div className="hero-identity">
+                <h1 id="hero-title">
+                  <span>SAMUEL</span>
+                  <span>LISBOA</span>
+                </h1>
+                <figure className="hero-portrait">
+                  <Image
+                    src="/images/profile/samuel-lisboa.jpeg"
+                    alt="Retrato de Samuel Lisboa"
+                    width={1186}
+                    height={1326}
+                    priority
+                  />
+                  <figcaption>PROFILE / 2026</figcaption>
+                </figure>
+              </div>
+              <p className="hero-nickname">or just &apos;samuca&apos;</p>
             </div>
 
             <div className="hero-bottom">
@@ -107,7 +121,7 @@ export default function HomePage() {
 
               <Reveal className="facts-grid" delay={0.08}>
                 {[
-                  ["BASED IN", "São Paulo, Brasil"],
+                  ["BASED IN", "Piracicaba, São Paulo — Brasil"],
                   ["STUDYING", "Software Engineering — UAM"],
                   ["FOCUS", "Software · Automation · AI"],
                   ["BUILDING", "Código NS"],
@@ -266,24 +280,21 @@ export default function HomePage() {
             <div>
               <span className="section-label">07 / CONTACT</span>
               <h2>TEM ALGO PRA CONSTRUIR?</h2>
+              <p className="contact-intro">
+                Escreva do jeito que vier. O botão só prepara o email e abre o
+                Gmail — nenhuma mensagem passa por servidor deste site.
+              </p>
+              <div className="contact-socials">
+                <a href={siteConfig.linkedin} target="_blank" rel="noreferrer">
+                  LinkedIn <ArrowUpRight size={15} aria-hidden="true" />
+                </a>
+                <a href={siteConfig.github} target="_blank" rel="noreferrer">
+                  GitHub <ArrowUpRight size={15} aria-hidden="true" />
+                </a>
+                <a href={siteConfig.emailHref}>{siteConfig.email}</a>
+              </div>
             </div>
-            <div className="contact-links">
-              <a href={siteConfig.emailHref}>
-                <span>EMAIL</span>
-                <strong>{siteConfig.email}</strong>
-                <Mail size={18} aria-hidden="true" />
-              </a>
-              <a href={siteConfig.linkedin} target="_blank" rel="noreferrer">
-                <span>LINKEDIN</span>
-                <strong>Samuel Lisboa</strong>
-                <ArrowUpRight size={18} aria-hidden="true" />
-              </a>
-              <a href={siteConfig.github} target="_blank" rel="noreferrer">
-                <span>GITHUB</span>
-                <strong>@lisboasamuu</strong>
-                <ArrowUpRight size={18} aria-hidden="true" />
-              </a>
-            </div>
+            <EmailComposer />
           </div>
         </section>
       </main>

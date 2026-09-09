@@ -32,11 +32,15 @@ npm run typecheck
 npm run build
 ```
 
+## Assets atuais
+
+- Currículo real: `public/samuel-lisboa-cv.pdf`.
+- Foto: `public/images/profile/samuel-lisboa.jpeg`.
+- NS Chat Platform: screenshots selecionados em `public/images/projects/ns-chat/`.
+- Operational Automation Suite: interfaces ilustrativas em `public/images/projects/automation-suite/`.
+
 ## Pendências de conteúdo
 
-- Adicionar o currículo real em `public/samuel-lisboa-cv.pdf` para habilitar o download.
 - Adicionar favicon oficial quando existir.
-- Adicionar imagens/mockups de projetos apenas quando forem aprovados e não contiverem informação confidencial.
+- Adicionar mídia dos projetos Operational AI Assistants e Código NS somente quando aprovada.
 - Adicionar métricas apenas quando forem confirmadas.
-
-Nenhum asset fictício foi criado para preencher essas pendências.

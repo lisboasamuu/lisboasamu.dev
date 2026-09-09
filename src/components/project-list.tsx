@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { projects } from "@/data/portfolio";
 import { Reveal } from "./reveal";
@@ -37,13 +38,32 @@ export function ProjectList({ compact = false }: ProjectListProps) {
             <div className="project-meta">
               <span className="meta-label">STATUS</span>
               <strong>{project.status}</strong>
-              <div className="mockup" aria-hidden="true">
-                <span />
-                <span />
-                <span />
-                <div />
-              </div>
             </div>
+
+            {project.media?.length ? (
+              <div className="project-media">
+                {project.media.map((media, mediaIndex) => (
+                  <figure
+                    key={media.src}
+                    className={mediaIndex === 0 ? "project-shot project-shot-featured" : "project-shot"}
+                  >
+                    <Image
+                      src={media.src}
+                      alt={media.alt}
+                      width={1600}
+                      height={1000}
+                      sizes="(max-width: 760px) 100vw, (max-width: 1200px) 75vw, 980px"
+                    />
+                  </figure>
+                ))}
+              </div>
+            ) : (
+              <div className="project-placeholder" aria-hidden="true">
+                <span>{project.category.split(" / ")[0]}</span>
+                <strong>{project.name}</strong>
+                <span>MEDIA / PENDING</span>
+              </div>
+            )}
           </article>
         </Reveal>
       ))}

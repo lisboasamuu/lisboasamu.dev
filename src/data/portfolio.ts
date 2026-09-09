@@ -1,5 +1,10 @@
 import { siteConfig } from "@/lib/site";
 
+export type ProjectMedia = {
+  src: string;
+  alt: string;
+};
+
 export type Project = {
   number: string;
   name: string;
@@ -9,6 +14,7 @@ export type Project = {
   status: string;
   year?: string;
   note?: string;
+  media?: ProjectMedia[];
 };
 
 export type Experience = {
@@ -58,9 +64,27 @@ export const projects: Project[] = [
       "PostgreSQL",
       "Prisma",
       "React / Next.js",
-      "WhatsApp Integration"
+      "WhatsApp Integration",
     ],
     status: "IN DEVELOPMENT",
+    media: [
+      {
+        src: "/images/projects/ns-chat/dashboard.jpeg",
+        alt: "Dashboard do NS Chat Platform com visão geral da aplicação.",
+      },
+      {
+        src: "/images/projects/ns-chat/clients.jpeg",
+        alt: "Tela de clientes do NS Chat Platform.",
+      },
+      {
+        src: "/images/projects/ns-chat/conversations.jpeg",
+        alt: "Tela de conversas do NS Chat Platform.",
+      },
+      {
+        src: "/images/projects/ns-chat/appointments.jpeg",
+        alt: "Tela de agendamentos do NS Chat Platform.",
+      },
+    ],
   },
   {
     number: "02",
@@ -72,6 +96,16 @@ export const projects: Project[] = [
     status: "PROFESSIONAL WORK",
     note:
       "Interface ilustrativa. Informações sensíveis e elementos internos foram removidos ou anonimizados.",
+    media: [
+      {
+        src: "/images/projects/automation-suite/file-recovery-automation.png",
+        alt: "Interface ilustrativa de automação para recuperação de arquivos, com dados internos removidos.",
+      },
+      {
+        src: "/images/projects/automation-suite/reporting-automation.png",
+        alt: "Interface ilustrativa de automação de relatórios, com dados internos removidos.",
+      },
+    ],
   },
   {
     number: "03",
@@ -84,7 +118,7 @@ export const projects: Project[] = [
       "Agents",
       "Knowledge Systems",
       "Prompt Engineering",
-      "Automation"
+      "Automation",
     ],
     status: "EXPLORATION / BUILDING",
     note:

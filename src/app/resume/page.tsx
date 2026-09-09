@@ -129,7 +129,7 @@ export default function ResumePage() {
             <a href={siteConfig.emailHref}>{siteConfig.email}</a>
             <a href={siteConfig.github}>{siteConfig.github}</a>
             <a href={siteConfig.linkedin}>{siteConfig.linkedin}</a>
-            <span>São Paulo, Brasil</span>
+            <span>Piracicaba, São Paulo — Brasil</span>
           </div>
         </section>
       </div>
