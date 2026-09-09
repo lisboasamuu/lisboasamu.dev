@@ -1,6 +1,6 @@
 # lisboasamu.dev
 
-V1 do portfólio pessoal oficial de Samuel Lisboa.
+V1 do meu portfolio ajustada.
 
 ## Stack
 
