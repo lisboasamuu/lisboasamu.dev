@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { ArrowDown, ArrowUpRight, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { CvButton } from "@/components/cv-button";
 import { EmailComposer } from "@/components/email-composer";
@@ -17,6 +17,8 @@ import {
 } from "@/data/portfolio";
 import { siteConfig } from "@/lib/site";
 
+
+
 export default function HomePage() {
   return (
     <>
@@ -26,8 +28,10 @@ export default function HomePage() {
           <div className="hero-glow" aria-hidden="true" />
           <div className="shell hero-shell">
             <div className="hero-topline">
-              <span>SOFTWARE ENGINEERING / AUTOMATION / AI</span>
-              <span>PIRACICABA, SÃO PAULO — BRAZIL</span>
+              <span className="hero-disciplines">
+                SOFTWARE ENGINEERING / AUTOMATION / AI
+              </span>
+              <span className="hero-location">PIRACICABA, SÃO PAULO — BRAZIL</span>
             </div>
 
             <div className="hero-title-wrap">
@@ -39,7 +43,7 @@ export default function HomePage() {
                 </h1>
                 <figure className="hero-portrait">
                   <Image
-                    src="/images/profile/samuel-lisboa.png"
+                    src="/images/profile/samuca.png"
                     alt="Retrato de Samuel Lisboa"
                     width={1145}
                     height={1374}
@@ -180,11 +184,17 @@ export default function HomePage() {
 
               <Reveal className="career-flow">
                 <span className="meta-label">SYSTEM / EVOLUTION</span>
-                {careerFlow.map((step, index) => (
-                  <div key={step}>
-                    <strong>{step}</strong>
-                    {index < careerFlow.length - 1 ? <span>↓</span> : null}
-                  </div>
+                {careerFlow.map((step) => (
+                  <details className="career-step" key={step.label}>
+                    <summary>
+                      <strong>{step.label}</strong>
+                      <ChevronDown size={16} aria-hidden="true" />
+                    </summary>
+                    <div className="career-step-content">
+                      <p>{step.description}</p>
+                      <span>{step.stack}</span>
+                    </div>
+                  </details>
                 ))}
               </Reveal>
             </div>

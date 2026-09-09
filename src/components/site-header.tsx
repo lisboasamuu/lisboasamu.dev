@@ -12,7 +12,7 @@ export function SiteHeader() {
         <Link href="/" className="brand" aria-label="Samuel Lisboa — início">
           <Image
             className="brand-logo"
-            src="/images/brand/samuel-mark.png"
+            src="/images/brand/minhamarca.png"
             alt=""
             width={30}
             height={30}

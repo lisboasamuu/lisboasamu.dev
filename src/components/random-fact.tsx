@@ -11,16 +11,10 @@ const facts = [
   "tive uma cadela chamada Brenda",
   "se pudesse ser um animal seria um ornitorrinco",
 ] as const;
-
 export function RandomFact() {
   const [factIndex, setFactIndex] = useState<number | null>(null);
 
   function showRandomFact() {
-    if (facts.length === 1) {
-      setFactIndex(0);
-      return;
-    }
-
     let nextIndex = Math.floor(Math.random() * facts.length);
 
     while (nextIndex === factIndex) {
@@ -29,7 +23,6 @@ export function RandomFact() {
 
     setFactIndex(nextIndex);
   }
-
   return (
     <div className="random-fact">
       <button type="button" className="random-fact-button" onClick={showRandomFact}>

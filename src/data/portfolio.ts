@@ -216,10 +216,40 @@ export const certifications = [
 ] as const;
 
 export const careerFlow = [
-  "Operações",
-  "Identificação de problemas",
-  "Melhoria contínua",
-  "Automação",
-  "Software",
-  "IA",
+  {
+    label: "Operações",
+    description:
+      "Atuação em operações de alta complexidade, com análise de demandas críticas, suporte especializado e resolução de casos que exigem leitura cuidadosa do processo e tomada de decisão operacional.",
+    stack: "OPERAÇÕES · ANÁLISE · RESOLUÇÃO DE CASOS",
+  },
+  {
+    label: "Identificação de problemas",
+    description:
+      "Mapeio gargalos, manualidades, retrabalho e pontos de atrito na operação. Transformo dores do dia a dia em problemas bem definidos, requisitos e oportunidades de melhoria — incluindo mais de 15 oportunidades de automação já identificadas e documentadas.",
+    stack: "PROCESS MAPPING · ROOT CAUSE · OPPORTUNITY DISCOVERY",
+  },
+  {
+    label: "Melhoria contínua",
+    description:
+      "Redesenho fluxos e proponho melhorias para tornar processos mais simples, rápidos e confiáveis. Conecto conhecimento operacional, dados e tecnologia para gerar ganhos de produtividade, qualidade e experiência no trabalho.",
+    stack: "PROCESS IMPROVEMENT · EFFICIENCY · STANDARDIZATION",
+  },
+  {
+    label: "Automação",
+    description:
+      "Criei 3 soluções em Python e RPA para reduzir tarefas repetitivas e manualidades operacionais. Em processos específicos, essas soluções contribuíram para reduções de até 40% no tempo de atendimento.",
+    stack: "PYTHON · SELENIUM · PANDAS · OPENPYXL · RPA",
+  },
+  {
+    label: "Software",
+    description:
+      "Desenvolvo sistemas e ferramentas digitais voltados a problemas reais, conectando interface, backend, dados e integrações. Entre os projetos, construo soluções web e uma plataforma de atendimento e agendamentos integrada ao WhatsApp.",
+    stack: "TYPESCRIPT · NODE.JS · REACT / NEXT.JS · POSTGRESQL · APIS",
+  },
+  {
+    label: "IA",
+    description:
+      "Criei 2 agentes Copilot aplicados ao trabalho: um para geração de imagens dentro de padrões definidos e outro baseado em conhecimento operacional, criado para apoiar consultas, dúvidas e atividades do dia a dia.",
+    stack: "AI AGENTS · COPILOT · PROMPT ENGINEERING · KNOWLEDGE SYSTEMS",
+  },
 ] as const;
