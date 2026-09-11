@@ -17,7 +17,7 @@ import {
 } from "@/data/portfolio";
 import { siteConfig } from "@/lib/site";
 
-
+const SHOW_PROFILE_PHOTO = false;
 
 export default function HomePage() {
   return (
@@ -36,22 +36,29 @@ export default function HomePage() {
 
             <div className="hero-title-wrap">
               <p className="hero-kicker">PERSONAL SPACE / 2026</p>
-              <div className="hero-identity">
-                <h1 id="hero-title">
-                  <span>SAMUEL</span>
-                  <span>LISBOA</span>
-                </h1>
-                <figure className="hero-portrait">
-                  <Image
-                    src="/images/profile/samuca.png"
-                    alt="Retrato de Samuel Lisboa"
-                    width={1145}
-                    height={1374}
-                    priority
-                  />
-                  <figcaption>PROFILE / 2026</figcaption>
-                </figure>
-              </div>
+                <div
+                  className={`hero-identity${
+                    SHOW_PROFILE_PHOTO ? "" : " hero-identity--solo"
+                  }`}
+                >
+                  <h1 id="hero-title">
+                    <span>SAMUEL</span>
+                    <span>LISBOA</span>
+                  </h1>
+
+                  {SHOW_PROFILE_PHOTO && (
+                    <figure className="hero-portrait">
+                      <Image
+                        src="/images/profile/samuca.png"
+                        alt="Retrato de Samuel Lisboa"
+                        width={1145}
+                        height={1374}
+                        priority
+                      />
+                      <figcaption>PROFILE / 2026</figcaption>
+                    </figure>
+                  )}
+                </div>
               <p className="hero-nickname">or just &apos;samuca&apos;</p>
             </div>
 

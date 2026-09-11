@@ -10,7 +10,15 @@ const facts = [
   "toco teclado e bateria",
   "tive uma cadela chamada Brenda",
   "se pudesse ser um animal seria um ornitorrinco",
+  "quando pequeno queria crescer e ser um cientista",
+  "amo cubos mágicos",
+  "minha comida preferida é fricassê 🤌",
+  "meu hobby preferido é tocar teclado",
+  "meu filme preferido é Truque de Mestre",
+  "tenho mania de anotar tudo que vejo e penso",
+  "sei tocar bateria e pandeiro também :)",
 ] as const;
+
 export function RandomFact() {
   const [factIndex, setFactIndex] = useState<number | null>(null);
 
@@ -23,18 +31,27 @@ export function RandomFact() {
 
     setFactIndex(nextIndex);
   }
+
   return (
     <div className="random-fact">
-      <button type="button" className="random-fact-button" onClick={showRandomFact}>
+      <button
+        type="button"
+        className="random-fact-button"
+        onClick={showRandomFact}
+      >
         <span>[ Random Fact ]</span>
         <Shuffle size={15} aria-hidden="true" />
       </button>
 
       <div className="random-fact-output" aria-live="polite">
         {factIndex === null ? (
-          <span className="random-fact-hint">clique para descobrir algo inútil sobre mim</span>
+          <span className="random-fact-hint">
+            clique para descobrir algo inútil sobre mim
+          </span>
         ) : (
-          <p>{facts[factIndex]}</p>
+          <p key={factIndex} className="random-fact-value">
+            {facts[factIndex]}
+          </p>
         )}
       </div>
     </div>

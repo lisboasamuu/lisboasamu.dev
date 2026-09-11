@@ -1811,6 +1811,1274 @@ button:focus-visible {
   }
 }
 
+/* =========================================================
+   LISBOASAMU — PURPLE SYSTEM / 2026
+   Palette:
+   #10002B #240046 #3C096C #5A189A #7B2CBF
+   #9D4EDD #C77DFF #E0AAFF #E6BBFF #EBC9FF
+   ========================================================= */
+
+:root {
+  --background: #10002b;
+  --surface: #240046;
+  --foreground: #ffffff;
+  --muted: #c77dff;
+
+  --highlight: #9d4edd;
+  --accent: #7b2cbf;
+  --accent-deep: #3c096c;
+
+  --purple-950: #10002b;
+  --purple-900: #240046;
+  --purple-800: #3c096c;
+  --purple-700: #5a189a;
+  --purple-600: #7b2cbf;
+  --purple-500: #9d4edd;
+  --purple-400: #c77dff;
+  --purple-300: #e0aaff;
+  --purple-200: #e6bbff;
+  --purple-100: #ebc9ff;
+
+  --border: color-mix(in srgb, var(--purple-300) 20%, transparent);
+}
+
+/* ---------- GLOBAL ---------- */
+
+html {
+  background: var(--purple-950);
+}
+
+body {
+  position: relative;
+  isolation: isolate;
+
+  background:
+    radial-gradient(
+      circle at 83% 8%,
+      rgba(157, 78, 221, 0.2),
+      transparent 31rem
+    ),
+    radial-gradient(
+      circle at 10% 42%,
+      rgba(90, 24, 154, 0.18),
+      transparent 34rem
+    ),
+    radial-gradient(
+      circle at 68% 84%,
+      rgba(123, 44, 191, 0.13),
+      transparent 30rem
+    ),
+    #10002b;
+
+  color: var(--foreground);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(rgba(224, 170, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(
+      90deg,
+      rgba(224, 170, 255, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 52px 52px;
+
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 15%,
+    black 75%,
+    transparent
+  );
+
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 15%,
+    black 75%,
+    transparent
+  );
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  width: 38rem;
+  height: 38rem;
+  right: -16rem;
+  bottom: -15rem;
+  z-index: -1;
+  pointer-events: none;
+
+  border-radius: 999px;
+
+  background: radial-gradient(
+    circle,
+    rgba(199, 125, 255, 0.2),
+    rgba(123, 44, 191, 0.08) 42%,
+    transparent 68%
+  );
+
+  filter: blur(30px);
+
+  animation: ambient-purple 14s ease-in-out infinite alternate;
+}
+
+::selection {
+  background: var(--purple-400);
+  color: var(--purple-950);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--purple-950);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    var(--purple-700),
+    var(--purple-400)
+  );
+  border-radius: 999px;
+}
+
+/* ---------- HEADER ---------- */
+
+.site-header {
+  border-bottom-color: rgba(199, 125, 255, 0.2);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(16, 0, 43, 0.9),
+      rgba(36, 0, 70, 0.82)
+    );
+
+  backdrop-filter: blur(22px);
+}
+
+.mobile-panel {
+  background: rgba(16, 0, 43, 0.97);
+  border-bottom-color: rgba(199, 125, 255, 0.18);
+}
+
+.brand-mark,
+.desktop-nav a:hover,
+.nav-github:hover,
+.hero-socials a:hover,
+.site-footer a:hover {
+  color: var(--purple-400);
+}
+
+/* ---------- BUTTONS ---------- */
+
+.button {
+  position: relative;
+  overflow: hidden;
+
+  border-color: rgba(199, 125, 255, 0.25);
+
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    110deg,
+    transparent 25%,
+    rgba(235, 201, 255, 0.16) 50%,
+    transparent 75%
+  );
+
+  transform: translateX(-120%);
+  transition: transform 450ms ease;
+}
+
+.button:hover::before {
+  transform: translateX(120%);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+
+  border-color: var(--purple-400);
+
+  box-shadow:
+    0 0 0 1px rgba(199, 125, 255, 0.08),
+    0 10px 35px rgba(123, 44, 191, 0.16);
+}
+
+.button-primary {
+  color: var(--purple-950);
+
+  border-color: var(--purple-300);
+
+  background: linear-gradient(
+    135deg,
+    var(--purple-300),
+    var(--purple-500)
+  );
+
+  box-shadow:
+    0 8px 35px rgba(157, 78, 221, 0.22),
+    inset 0 1px rgba(255, 255, 255, 0.26);
+}
+
+.button-primary:hover {
+  color: var(--purple-950);
+
+  background: linear-gradient(
+    135deg,
+    var(--purple-200),
+    var(--purple-400)
+  );
+
+  border-color: var(--purple-200);
+}
+
+/* ---------- HERO ---------- */
+
+.hero {
+  isolation: isolate;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(36, 0, 70, 0.16),
+      transparent 38%
+    );
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 18rem;
+  height: 18rem;
+  left: -7rem;
+  top: 22%;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(90, 24, 154, 0.3),
+    transparent 68%
+  );
+
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  right: 7%;
+  bottom: 8%;
+  width: 7rem;
+  height: 7rem;
+
+  border: 1px solid rgba(224, 170, 255, 0.12);
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 28px rgba(199, 125, 255, 0.025),
+    0 0 0 58px rgba(157, 78, 221, 0.018);
+
+  pointer-events: none;
+
+  animation: orbit-ring 7s ease-in-out infinite alternate;
+}
+
+.hero-glow {
+  background:
+    radial-gradient(
+      circle at 30% 35%,
+      rgba(224, 170, 255, 0.42),
+      transparent 20%
+    ),
+    radial-gradient(
+      circle at 58% 48%,
+      rgba(157, 78, 221, 0.52),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(90, 24, 154, 0.5),
+      transparent 64%
+    );
+
+  opacity: 0.7;
+  filter: blur(70px);
+
+  animation: hero-purple-pulse 8s ease-in-out infinite alternate;
+}
+
+.hero-kicker,
+.hero-nickname {
+  color: var(--purple-400);
+}
+
+.hero h1 span:first-child {
+  color: var(--purple-100);
+
+  text-shadow:
+    0 0 40px rgba(199, 125, 255, 0.08),
+    0 0 90px rgba(123, 44, 191, 0.08);
+}
+
+.hero h1 span:last-child {
+  color: transparent;
+
+  -webkit-text-stroke: 1.5px rgba(224, 170, 255, 0.85);
+
+  filter: drop-shadow(
+    0 0 16px rgba(157, 78, 221, 0.14)
+  );
+}
+
+/* Hero sem foto */
+
+.hero-identity--solo {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.hero-identity--solo h1 {
+  width: 100%;
+}
+
+.hero-status {
+  border-top-color: rgba(199, 125, 255, 0.18);
+}
+
+.hero-status > div {
+  border-bottom-color: rgba(199, 125, 255, 0.15);
+}
+
+.hero-status strong {
+  color: var(--purple-400);
+}
+
+/* ---------- SECTIONS ---------- */
+
+.section {
+  border-bottom-color: rgba(199, 125, 255, 0.13);
+}
+
+.section-surface {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(60, 9, 108, 0.22),
+      rgba(36, 0, 70, 0.3) 48%,
+      rgba(16, 0, 43, 0.2)
+    );
+}
+
+.section-label {
+  color: var(--purple-400);
+}
+
+.section-heading h2 {
+  text-shadow: 0 0 55px rgba(157, 78, 221, 0.08);
+}
+
+/* ---------- RANDOM FACT ---------- */
+
+.random-fact {
+  position: relative;
+  padding: 1rem;
+
+  border: 1px solid rgba(199, 125, 255, 0.13);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(123, 44, 191, 0.08),
+      rgba(157, 78, 221, 0.025)
+    );
+
+  box-shadow:
+    inset 0 1px rgba(235, 201, 255, 0.025),
+    0 18px 50px rgba(16, 0, 43, 0.12);
+}
+
+.random-fact::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  right: 0.8rem;
+  top: 0.8rem;
+
+  border-radius: 50%;
+  background: var(--purple-400);
+
+  box-shadow:
+    0 0 10px var(--purple-400),
+    0 0 24px rgba(199, 125, 255, 0.45);
+
+  animation: status-pulse 2s ease-in-out infinite;
+}
+
+.random-fact-button {
+  border-color: rgba(199, 125, 255, 0.45);
+  color: var(--purple-300);
+
+  background: rgba(36, 0, 70, 0.25);
+}
+
+.random-fact-button:hover {
+  color: var(--purple-950);
+
+  background: linear-gradient(
+    135deg,
+    var(--purple-300),
+    var(--purple-500)
+  );
+
+  border-color: var(--purple-300);
+
+  box-shadow: 0 10px 35px rgba(123, 44, 191, 0.18);
+}
+
+.random-fact-output {
+  border-left-color: var(--purple-400);
+}
+
+.random-fact-value {
+  animation: fact-pop 320ms cubic-bezier(.16, 1, .3, 1);
+}
+
+/* ---------- ABOUT FACTS ---------- */
+
+.fact {
+  transition:
+    background 220ms ease,
+    padding 220ms ease;
+}
+
+.fact:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(123, 44, 191, 0.1),
+    transparent
+  );
+}
+
+/* ---------- PROJECTS ---------- */
+
+.project-row {
+  position: relative;
+
+  transition:
+    border-color 220ms ease,
+    background 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.project-row:hover {
+  border-color: var(--purple-400);
+
+  background: linear-gradient(
+    90deg,
+    rgba(90, 24, 154, 0.11),
+    transparent 58%
+  );
+
+  box-shadow:
+    inset 3px 0 0 rgba(199, 125, 255, 0.48);
+}
+
+.project-category,
+.project-meta strong {
+  color: var(--purple-400);
+}
+
+.tag-list span {
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.tag-list span:hover {
+  color: var(--purple-200);
+  border-color: rgba(199, 125, 255, 0.48);
+
+  background: rgba(123, 44, 191, 0.12);
+
+  transform: translateY(-2px);
+}
+
+.project-shot {
+  border-color: rgba(199, 125, 255, 0.15);
+
+  box-shadow:
+    0 18px 60px rgba(16, 0, 43, 0.17);
+}
+
+.project-shot:hover {
+  border-color: rgba(199, 125, 255, 0.45);
+
+  box-shadow:
+    0 20px 70px rgba(90, 24, 154, 0.22),
+    0 0 35px rgba(157, 78, 221, 0.08);
+}
+
+.project-placeholder {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(157, 78, 221, 0.12),
+      transparent 45%
+    ),
+    rgba(36, 0, 70, 0.36);
+}
+
+.mockup {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(199, 125, 255, 0.1),
+      transparent 42%
+    ),
+    rgba(16, 0, 43, 0.7);
+}
+
+/* ---------- EXPERIENCE ---------- */
+
+.timeline {
+  border-top-color: rgba(199, 125, 255, 0.18);
+}
+
+.timeline-item {
+  position: relative;
+
+  border-bottom-color: rgba(199, 125, 255, 0.14);
+
+  transition:
+    background 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 18%;
+  bottom: 18%;
+  width: 2px;
+
+  background: linear-gradient(
+    var(--purple-400),
+    var(--purple-700)
+  );
+
+  opacity: 0;
+  transform: scaleY(0.4);
+
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease;
+}
+
+.timeline-item:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(123, 44, 191, 0.08),
+    transparent
+  );
+}
+
+.timeline-item:hover::before {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.timeline-date,
+.timeline-company {
+  color: var(--purple-400);
+}
+
+.career-step {
+  border-bottom-color: rgba(199, 125, 255, 0.16);
+
+  transition:
+    background 200ms ease,
+    border-color 200ms ease;
+}
+
+.career-step:hover {
+  background: rgba(123, 44, 191, 0.055);
+}
+
+.career-step[open] {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(123, 44, 191, 0.1),
+      transparent
+    );
+
+  border-bottom-color: rgba(199, 125, 255, 0.35);
+}
+
+.career-step summary svg,
+.career-step-content span {
+  color: var(--purple-400);
+}
+
+/* ---------- SKILLS / SERVICES ---------- */
+
+.skill-group,
+.service-card {
+  transition:
+    background 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.skill-group:hover,
+.service-card:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(123, 44, 191, 0.08),
+    transparent 62%
+  );
+
+  box-shadow:
+    inset 0 1px rgba(199, 125, 255, 0.09);
+}
+
+.skill-group h3,
+.service-card > span,
+.services-cta .text-link {
+  color: var(--purple-400);
+}
+
+/* ---------- CÓDIGO NS ---------- */
+
+.venture-section {
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(157, 78, 221, 0.32),
+      transparent 30rem
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(90, 24, 154, 0.3),
+      transparent 28rem
+    ),
+    linear-gradient(
+      135deg,
+      rgba(60, 9, 108, 0.6),
+      rgba(16, 0, 43, 0.82)
+    ),
+    var(--purple-950);
+}
+
+.venture-section h2 {
+  color: var(--purple-300);
+
+  text-shadow:
+    0 0 50px rgba(157, 78, 221, 0.24);
+}
+
+.venture-disciplines span {
+  color: var(--purple-300);
+  border-color: rgba(199, 125, 255, 0.38);
+
+  background: rgba(36, 0, 70, 0.22);
+
+  transition:
+    background 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.venture-disciplines span:hover {
+  transform: translateY(-2px);
+
+  background: rgba(157, 78, 221, 0.15);
+
+  box-shadow: 0 10px 35px rgba(90, 24, 154, 0.18);
+}
+
+/* ---------- CONTACT ---------- */
+
+.contact-section {
+  color: #10002b;
+  background: #f3efe5;
+}
+
+.contact-section .section-label {
+  color: var(--purple-700);
+}
+
+.contact-intro {
+  color: var(--purple-800);
+}
+
+.contact-socials a {
+  border-bottom-color: rgba(60, 9, 108, 0.25);
+}
+
+.email-composer {
+  border-color: rgba(60, 9, 108, 0.2);
+
+  background: rgba(235, 201, 255, 0.46);
+
+  backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 28px 80px rgba(60, 9, 108, 0.13),
+    inset 0 1px rgba(255, 255, 255, 0.45);
+}
+
+.email-composer label,
+.composer-footer > span,
+.composer-note {
+  color: var(--purple-800);
+}
+
+.email-composer textarea {
+  color: var(--purple-950);
+  border-bottom-color: rgba(60, 9, 108, 0.35);
+}
+
+.email-composer textarea::placeholder {
+  color: rgba(60, 9, 108, 0.55);
+}
+
+.email-composer textarea:focus-visible {
+  border-bottom-color: var(--purple-600);
+  box-shadow: 0 2px 0 var(--purple-600);
+}
+
+.composer-submit {
+  color: var(--purple-100);
+
+  background: linear-gradient(
+    135deg,
+    var(--purple-800),
+    var(--purple-600)
+  );
+
+  box-shadow: 0 8px 28px rgba(60, 9, 108, 0.2);
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.composer-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  background: linear-gradient(
+    135deg,
+    var(--purple-700),
+    var(--purple-500)
+  );
+
+  box-shadow: 0 14px 38px rgba(60, 9, 108, 0.28);
+}
+
+/* ---------- FOOTER ---------- */
+
+.site-footer {
+  background:
+    linear-gradient(
+      180deg,
+      #10002b,
+      #0c0020
+    );
+
+  border-top-color: rgba(199, 125, 255, 0.18);
+}
+
+/* ---------- ANIMATIONS ---------- */
+
+@keyframes ambient-purple {
+  from {
+    transform: translate3d(0, 0, 0) scale(0.94);
+    opacity: 0.55;
+  }
+
+  to {
+    transform: translate3d(-4rem, -3rem, 0) scale(1.08);
+    opacity: 0.9;
+  }
+}
+
+@keyframes hero-purple-pulse {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.92);
+    opacity: 0.48;
+  }
+
+  100% {
+    transform: translate3d(-4%, 4%, 0) scale(1.08);
+    opacity: 0.78;
+  }
+}
+
+@keyframes orbit-ring {
+  from {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.35;
+  }
+
+  to {
+    transform: translateY(-1.5rem) rotate(14deg);
+    opacity: 0.7;
+  }
+}
+
+@keyframes status-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes fact-pop {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+    filter: blur(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* =========================================================
+   LISBOASAMU — DARK GREEN SYSTEM
+   Verde como acento, preto como protagonista
+   ========================================================= */
+
+:root {
+  --background: #080b09;
+  --surface: #0d120e;
+  --foreground: #f7f7f3;
+  --muted: #a7ada7;
+
+  --highlight: #a9bf52;
+  --accent: #4b872b;
+  --accent-deep: #104f17;
+
+  /* Mantidos com os nomes antigos para o tema existente funcionar */
+  --purple-950: #080b09;
+  --purple-900: #0d120e;
+  --purple-800: #083316;
+  --purple-700: #104f17;
+  --purple-600: #266b1c;
+  --purple-500: #4b872b;
+  --purple-400: #78a33d;
+  --purple-300: #a9bf52;
+  --purple-200: #dbd76a;
+  --purple-100: #f7f7f3;
+
+  --border: rgba(169, 191, 82, 0.14);
+}
+
+
+/* FUNDO — praticamente preto */
+
+html {
+  background: #080b09;
+}
+
+body {
+  color: #f7f7f3;
+
+  background:
+    radial-gradient(
+      circle at 88% 12%,
+      rgba(38, 107, 28, 0.10),
+      transparent 32rem
+    ),
+    radial-gradient(
+      circle at 10% 75%,
+      rgba(16, 79, 23, 0.07),
+      transparent 30rem
+    ),
+    #080b09;
+}
+
+
+/* Grid extremamente discreto */
+
+body::before {
+  background-image:
+    linear-gradient(
+      rgba(169, 191, 82, 0.022) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(169, 191, 82, 0.022) 1px,
+      transparent 1px
+    );
+}
+
+
+/* Glow ambiente */
+
+body::after {
+  background: radial-gradient(
+    circle,
+    rgba(75, 135, 43, 0.09),
+    rgba(16, 79, 23, 0.035) 45%,
+    transparent 70%
+  );
+
+  opacity: 0.7;
+}
+
+
+/* HEADER */
+
+.site-header {
+  background: rgba(8, 11, 9, 0.88);
+  border-bottom-color: rgba(169, 191, 82, 0.12);
+  backdrop-filter: blur(22px);
+}
+
+.mobile-panel {
+  background: rgba(8, 11, 9, 0.98);
+}
+
+
+/* HERO */
+
+.hero {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(16, 79, 23, 0.035),
+      transparent 35%
+    );
+}
+
+.hero-glow {
+  background:
+    radial-gradient(
+      circle at 40% 45%,
+      rgba(169, 191, 82, 0.10),
+      transparent 22%
+    ),
+    radial-gradient(
+      circle at 55% 50%,
+      rgba(38, 107, 28, 0.15),
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(16, 79, 23, 0.10),
+      transparent 65%
+    );
+
+  opacity: 0.55;
+  filter: blur(80px);
+}
+
+
+/* SAMUEL volta pro branco */
+
+.hero h1 span:first-child {
+  color: #ffffff;
+
+  text-shadow:
+    0 0 50px rgba(169, 191, 82, 0.035);
+}
+
+
+/* LISBOA: outline branco levemente esverdeado */
+
+.hero h1 span:last-child {
+  color: transparent;
+
+  -webkit-text-stroke: 1.5px rgba(231, 238, 220, 0.82);
+
+  filter:
+    drop-shadow(0 0 18px rgba(75, 135, 43, 0.07));
+}
+
+
+/* Verde só nos pequenos destaques */
+
+.hero-kicker,
+.hero-nickname,
+.hero-status strong,
+.section-label,
+.timeline-date,
+.timeline-company,
+.project-category,
+.project-meta strong,
+.skill-group h3,
+.service-card > span,
+.services-cta .text-link,
+.career-step summary svg,
+.career-step-content span {
+  color: #a9bf52;
+}
+
+
+/* Botão principal */
+
+.button-primary {
+  color: #080b09;
+
+  background: #dbd76a;
+
+  border-color: #dbd76a;
+
+  box-shadow:
+    0 10px 35px rgba(120, 163, 61, 0.10);
+}
+
+.button-primary:hover {
+  color: #080b09;
+
+  background: #a9bf52;
+  border-color: #a9bf52;
+
+  box-shadow:
+    0 12px 40px rgba(120, 163, 61, 0.16);
+}
+
+
+/* Seções alternadas continuam escuras */
+
+.section-surface {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(16, 79, 23, 0.035),
+      rgba(13, 18, 14, 0.52) 55%,
+      rgba(8, 11, 9, 0.7)
+    );
+}
+
+
+/* Projects */
+
+.project-row:hover {
+  border-color: rgba(169, 191, 82, 0.48);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(75, 135, 43, 0.045),
+      transparent 60%
+    );
+
+  box-shadow:
+    inset 2px 0 0 rgba(169, 191, 82, 0.45);
+}
+
+
+/* Tags */
+
+.tag-list span:hover {
+  color: #dbd76a;
+  border-color: rgba(169, 191, 82, 0.38);
+
+  background: rgba(75, 135, 43, 0.07);
+}
+
+
+/* Random Fact */
+
+.random-fact {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(38, 107, 28, 0.045),
+      rgba(8, 11, 9, 0.1)
+    );
+
+  border-color: rgba(169, 191, 82, 0.12);
+}
+
+.random-fact-button {
+  color: #a9bf52;
+  border-color: rgba(169, 191, 82, 0.32);
+
+  background: rgba(16, 79, 23, 0.05);
+}
+
+.random-fact-button:hover {
+  color: #080b09;
+  background: #a9bf52;
+  border-color: #a9bf52;
+}
+
+
+/* Experience */
+
+.timeline-item:hover {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(75, 135, 43, 0.04),
+      transparent
+    );
+}
+
+.timeline-item::before {
+  background:
+    linear-gradient(
+      #a9bf52,
+      #266b1c
+    );
+}
+
+
+/* CÓDIGO NS */
+
+.venture-section {
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(75, 135, 43, 0.09),
+      transparent 28rem
+    ),
+    linear-gradient(
+      135deg,
+      #0c110d,
+      #080b09 65%
+    );
+}
+
+.venture-section h2 {
+  color: #ffffff;
+
+  text-shadow:
+    0 0 55px rgba(75, 135, 43, 0.10);
+}
+
+.venture-disciplines span {
+  color: #a9bf52;
+  border-color: rgba(169, 191, 82, 0.25);
+
+  background: transparent;
+}
+
+
+/* CONTATO — mantém aquele branco profissional */
+
+.contact-section {
+  color: #111512;
+  background: #f3efe5;
+}
+
+.contact-section .section-label {
+  color: #266b1c;
+}
+
+.contact-intro {
+  color: #4f5750;
+}
+
+.email-composer {
+  background: rgba(255, 255, 255, 0.5);
+  border-color: rgba(16, 79, 23, 0.18);
+
+  box-shadow:
+    0 25px 75px rgba(8, 51, 22, 0.07);
+}
+
+.email-composer label,
+.composer-footer > span,
+.composer-note {
+  color: #4f5750;
+}
+
+.email-composer textarea {
+  color: #111512;
+}
+
+.composer-submit {
+  color: #ffffff;
+
+  background: #104f17;
+}
+
+.composer-submit:hover:not(:disabled) {
+  background: #266b1c;
+}
+
+
+/* FOOTER */
+
+.site-footer {
+  background: #060807;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 760px) {
+  body::before {
+    background-size: 38px 38px;
+  }
+
+  body::after {
+    width: 24rem;
+    height: 24rem;
+    opacity: 0.62;
+  }
+
+  .hero-identity--solo {
+    display: block;
+  }
+
+  .hero-identity--solo h1 {
+    width: 100%;
+  }
+
+  .hero::after {
+    width: 4rem;
+    height: 4rem;
+    right: -1rem;
+  }
+
+  .random-fact {
+    padding: 0.85rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
