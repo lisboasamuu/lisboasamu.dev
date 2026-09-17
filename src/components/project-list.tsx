@@ -33,6 +33,18 @@ export function ProjectList({ compact = false }: ProjectListProps) {
               </div>
 
               {project.note ? <p className="privacy-note">{project.note}</p> : null}
+
+              {project.href ? (
+                <a
+                  className="text-link project-link"
+                  href={project.href}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {project.linkLabel ?? "Ver projeto"}{" "}
+                  <ArrowUpRight size={16} aria-hidden="true" />
+                </a>
+              ) : null}
             </div>
 
             <div className="project-meta">
@@ -61,8 +73,8 @@ export function ProjectList({ compact = false }: ProjectListProps) {
                       <Image
                         src={media.src}
                         alt={media.alt}
-                        width={isSingleMedia ? 2048 : 1600}
-                        height={isSingleMedia ? 682 : 1000}
+                        width={media.width ?? (isSingleMedia ? 2048 : 1600)}
+                        height={media.height ?? (isSingleMedia ? 682 : 1000)}
                         sizes="(max-width: 760px) 100vw, (max-width: 1200px) 75vw, 980px"
                       />
                     </figure>

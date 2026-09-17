@@ -37,7 +37,5 @@ npm run build
 - Currículo real: `public/samuel-lisboa-cv.pdf`.
 - Foto: `public/images/profile/samuel-lisboa.png`.
 - Marca pessoal/favicon: `public/images/brand/samuel-mark.png` e `src/app/icon.png`.
-- NS Chat Platform: screenshots selecionados em `public/images/projects/ns-chat/`.
 - Operational Automation Suite: interfaces ilustrativas em `public/images/projects/automation-suite/`.
-- Código NS: banner oficial em `public/images/projects/codigo-ns/banner.png`.
-
+- Código-S Negócios: banner oficial em `public/images/projects/codigo-s-negocios/banner.png`.

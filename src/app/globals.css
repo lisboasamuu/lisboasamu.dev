@@ -676,6 +676,15 @@ button:focus-visible {
   margin-top: 1rem;
 }
 
+.project-link {
+  margin-top: 1.25rem;
+  color: var(--highlight);
+}
+
+.project-link:hover {
+  color: var(--foreground);
+}
+
 .project-meta {
   display: flex;
   flex-direction: column;
@@ -2473,7 +2482,7 @@ body::after {
   color: var(--purple-400);
 }
 
-/* ---------- CÓDIGO NS ---------- */
+/* ---------- CÓDIGO-S NEGÓCIOS ---------- */
 
 .venture-section {
   overflow: hidden;
@@ -2966,7 +2975,7 @@ body::after {
 }
 
 
-/* CÓDIGO NS */
+/* CÓDIGO-S NEGÓCIOS */
 
 .venture-section {
   background:

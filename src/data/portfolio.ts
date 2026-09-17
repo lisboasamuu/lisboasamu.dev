@@ -3,6 +3,8 @@ import { siteConfig } from "@/lib/site";
 export type ProjectMedia = {
   src: string;
   alt: string;
+  width?: number;
+  height?: number;
 };
 
 export type Project = {
@@ -15,6 +17,8 @@ export type Project = {
   year?: string;
   note?: string;
   media?: ProjectMedia[];
+  href?: string;
+  linkLabel?: string;
 };
 
 export type Experience = {
@@ -54,35 +58,30 @@ export const socials = [
 export const projects: Project[] = [
   {
     number: "01",
-    name: "NS Chat Platform",
-    category: "FULL-STACK / COMMUNICATION",
+    name: "Código-S Negócios",
+    category: "BUSINESS / WEB / MANAGEMENT",
     description:
-      "Plataforma full-stack para gerenciamento de atendimento, clientes, conversas e agendamentos através do WhatsApp.",
+      "Sites e landing pages profissionais para transformar a presença digital e centralizar a operação do negócio: agendamentos, visitas, depoimentos e gestão em um só lugar — sem depender de planilhas ou de vários serviços separados.",
     stack: [
-      "TypeScript",
-      "Node.js",
-      "PostgreSQL",
-      "Prisma",
-      "React / Next.js",
-      "WhatsApp Integration",
+      "Sites profissionais",
+      "Landing pages",
+      "Agendamentos",
+      "Gestão centralizada",
+      "Dashboards",
+      "Next.js",
     ],
-    status: "IN DEVELOPMENT",
+    year: "2026",
+    status: "BUILDING / FIRST CASE LIVE",
+    note:
+      "Visão 2.0: análise automatizada dos dados do negócio com inteligência artificial.",
+    href: "https://clinica.lisboasamu.com/clinica-lisboa/",
+    linkLabel: "Conhecer o primeiro projeto — Clínica Lisboa",
     media: [
       {
-        src: "/images/projects/ns-chat/dashboard.jpeg",
-        alt: "Dashboard do NS Chat Platform com visão geral da aplicação.",
-      },
-      {
-        src: "/images/projects/ns-chat/clients.jpeg",
-        alt: "Tela de clientes do NS Chat Platform.",
-      },
-      {
-        src: "/images/projects/ns-chat/conversations.jpeg",
-        alt: "Tela de conversas do NS Chat Platform.",
-      },
-      {
-        src: "/images/projects/ns-chat/appointments.jpeg",
-        alt: "Tela de agendamentos do NS Chat Platform.",
+        src: "/images/projects/codigo-s-negocios/banner.png",
+        alt: "Banner da iniciativa Código-S Negócios com exemplos de sites profissionais para diferentes segmentos.",
+        width: 1672,
+        height: 941,
       },
     ],
   },
@@ -123,22 +122,6 @@ export const projects: Project[] = [
     status: "EXPLORATION / BUILDING",
     note:
       "Informações corporativas, clientes, métricas e ferramentas internas não são publicadas.",
-  },
-  {
-    number: "04",
-    name: "Código NS",
-    category: "ENTREPRENEURSHIP / SOFTWARE / AUTOMATION / AI",
-    description:
-      "Iniciativa criada para desenvolver soluções digitais em desenvolvimento web, software, automação, inteligência artificial e design.",
-    stack: ["Web", "Software", "Automation", "AI", "Design"],
-    year: "2026",
-    status: "BUILDING",
-    media: [
-      {
-        src: "/images/projects/codigo-ns/banner.png",
-        alt: "Banner oficial da Código NS com identidade visual e áreas de atuação.",
-      },
-    ],
   },
 ];
 

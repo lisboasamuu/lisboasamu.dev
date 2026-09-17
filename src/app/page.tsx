@@ -92,7 +92,7 @@ export default function HomePage() {
                 <div>
                   <span>CURRENTLY</span>
                   <strong>BUILDING</strong>
-                  <p>Código NS</p>
+                  <p>Código-S Negócios</p>
                 </div>
                 <div>
                   <span>STUDYING</span>
@@ -141,7 +141,7 @@ export default function HomePage() {
                   ["BASED IN", "Piracicaba, São Paulo — Brasil"],
                   ["STUDYING", "Software Engineering — UAM"],
                   ["FOCUS", "Software · Automation · AI"],
-                  ["BUILDING", "Código NS"],
+                  ["BUILDING", "Código-S Negócios"],
                 ].map(([label, value]) => (
                   <div key={label} className="fact">
                     <span>{label}</span>
@@ -282,17 +282,19 @@ export default function HomePage() {
           <div className="shell venture-grid">
             <div>
               <span className="section-label">VENTURE / 2026</span>
-              <h2>CÓDIGO NS</h2>
+              <h2>CÓDIGO-S NEGÓCIOS</h2>
             </div>
             <div className="venture-content">
-              <div className="venture-disciplines" aria-label="Áreas da Código NS">
-                {["WEB", "SOFTWARE", "AUTOMATION", "AI", "DESIGN"].map((item) => (
+              <div className="venture-disciplines" aria-label="Áreas do Código-S Negócios">
+                {["SITES", "LANDING PAGES", "AGENDAMENTOS", "GESTÃO", "AI / V2"].map((item) => (
                   <span key={item}>{item}</span>
                 ))}
               </div>
               <p>
-                Também estou construindo a Código NS, iniciativa voltada à criação
-                de soluções digitais para empresas e pequenos negócios.
+                Uma iniciativa para dar ao negócio um site profissional e um centro
+                de gestão completo: agendamentos, visitas, depoimentos e operação em
+                um só lugar. Na versão 2.0, os dados também ganharão análises
+                automatizadas com inteligência artificial.
               </p>
             </div>
           </div>
