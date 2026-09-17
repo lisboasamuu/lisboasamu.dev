@@ -7,6 +7,11 @@ export type ProjectMedia = {
   height?: number;
 };
 
+export type ProjectLink = {
+  label: string;
+  href: string;
+};
+
 export type Project = {
   number: string;
   name: string;
@@ -19,6 +24,7 @@ export type Project = {
   media?: ProjectMedia[];
   href?: string;
   linkLabel?: string;
+  links?: ProjectLink[];
 };
 
 export type Experience = {
@@ -74,8 +80,16 @@ export const projects: Project[] = [
     status: "BUILDING / FIRST CASE LIVE",
     note:
       "Visão 2.0: análise automatizada dos dados do negócio com inteligência artificial.",
-    href: "https://clinica.lisboasamu.com/clinica-lisboa/",
-    linkLabel: "Conhecer o primeiro projeto — Clínica Lisboa",
+    links: [
+      {
+        label: "Ver Clínica Lisboa",
+        href: "https://clinica.lisboasamu.com/clinica-lisboa/",
+      },
+      {
+        label: "Ver Barbearia Lisboa",
+        href: "https://barbearia.lisboasamu.com/",
+      },
+    ],
     media: [
       {
         src: "/images/projects/codigo-s-negocios/banner.png",

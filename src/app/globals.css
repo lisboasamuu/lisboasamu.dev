@@ -800,6 +800,21 @@ button:focus-visible {
   -webkit-text-stroke: 1px rgba(247, 244, 239, 0.42);
 }
 
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.4rem;
+  margin-top: 1.4rem;
+}
+
+.project-links .text-link {
+  color: var(--highlight);
+}
+
+.project-links .text-link:hover {
+  color: var(--foreground);
+}
+
 .mockup {
   position: relative;
   margin-top: auto;

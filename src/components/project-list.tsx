@@ -1,7 +1,9 @@
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+
 import { projects } from "@/data/portfolio";
+
 import { Reveal } from "./reveal";
 
 type ProjectListProps = {
@@ -23,25 +25,49 @@ export function ProjectList({ compact = false }: ProjectListProps) {
 
             <div className="project-main">
               <p className="project-category">{project.category}</p>
-              <h3>{project.name}</h3>
-              <p className="project-description">{project.description}</p>
 
-              <div className="tag-list" aria-label={`Tecnologias de ${project.name}`}>
+              <h3>{project.name}</h3>
+
+              <p className="project-description">
+                {project.description}
+              </p>
+
+              <div
+                className="tag-list"
+                aria-label={`Tecnologias de ${project.name}`}
+              >
                 {project.stack.map((item) => (
                   <span key={item}>{item}</span>
                 ))}
               </div>
 
-              {project.note ? <p className="privacy-note">{project.note}</p> : null}
+              {project.note ? (
+                <p className="privacy-note">{project.note}</p>
+              ) : null}
 
-              {project.href ? (
+              {project.links?.length ? (
+                <div className="project-links">
+                  {project.links.map((link) => (
+                    <a
+                      key={link.href}
+                      className="text-link project-link"
+                      href={link.href}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {link.label}
+                      <ArrowUpRight size={16} aria-hidden="true" />
+                    </a>
+                  ))}
+                </div>
+              ) : project.href ? (
                 <a
                   className="text-link project-link"
                   href={project.href}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {project.linkLabel ?? "Ver projeto"}{" "}
+                  {project.linkLabel ?? "Ver projeto"}
                   <ArrowUpRight size={16} aria-hidden="true" />
                 </a>
               ) : null}
@@ -54,7 +80,11 @@ export function ProjectList({ compact = false }: ProjectListProps) {
 
             {project.media?.length ? (
               <div
-                className={`project-media${project.media.length === 1 ? " project-media-single" : ""}`}
+                className={`project-media${
+                  project.media.length === 1
+                    ? " project-media-single"
+                    : ""
+                }`}
               >
                 {project.media.map((media, mediaIndex) => {
                   const isSingleMedia = project.media?.length === 1;
@@ -73,8 +103,14 @@ export function ProjectList({ compact = false }: ProjectListProps) {
                       <Image
                         src={media.src}
                         alt={media.alt}
-                        width={media.width ?? (isSingleMedia ? 2048 : 1600)}
-                        height={media.height ?? (isSingleMedia ? 682 : 1000)}
+                        width={
+                          media.width ??
+                          (isSingleMedia ? 2048 : 1600)
+                        }
+                        height={
+                          media.height ??
+                          (isSingleMedia ? 682 : 1000)
+                        }
                         sizes="(max-width: 760px) 100vw, (max-width: 1200px) 75vw, 980px"
                       />
                     </figure>
@@ -82,7 +118,10 @@ export function ProjectList({ compact = false }: ProjectListProps) {
                 })}
               </div>
             ) : (
-              <div className="project-placeholder" aria-hidden="true">
+              <div
+                className="project-placeholder"
+                aria-hidden="true"
+              >
                 <span>{project.category.split(" / ")[0]}</span>
                 <strong>{project.name}</strong>
                 <span>MEDIA / PENDING</span>
@@ -94,7 +133,8 @@ export function ProjectList({ compact = false }: ProjectListProps) {
 
       {compact ? (
         <Link className="text-link" href="/projects">
-          Ver todos os projetos <ArrowUpRight size={16} aria-hidden="true" />
+          Ver todos os projetos
+          <ArrowUpRight size={16} aria-hidden="true" />
         </Link>
       ) : null}
     </div>
