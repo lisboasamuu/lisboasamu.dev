@@ -67,7 +67,7 @@ export const projects: Project[] = [
     name: "Código-S Negócios",
     category: "BUSINESS / WEB / MANAGEMENT",
     description:
-      "Sites e landing pages profissionais para transformar a presença digital e centralizar a operação do negócio: agendamentos, visitas, depoimentos e gestão em um só lugar — sem depender de planilhas ou de vários serviços separados.",
+      "Iniciativa voltada à criação de sites e landing pages profissionais para negócios, com foco em presença digital, agendamentos, visitas, depoimentos, gestão centralizada e experiência moderna para o cliente.",
     stack: [
       "Sites profissionais",
       "Landing pages",
@@ -77,19 +77,9 @@ export const projects: Project[] = [
       "Next.js",
     ],
     year: "2026",
-    status: "BUILDING / FIRST CASE LIVE",
+    status: "BUILDING / CASES LIVE",
     note:
       "Visão 2.0: análise automatizada dos dados do negócio com inteligência artificial.",
-    links: [
-      {
-        label: "Ver Clínica Lisboa",
-        href: "https://clinica.lisboasamu.com/clinica-lisboa/",
-      },
-      {
-        label: "Ver Barbearia Lisboa",
-        href: "https://barbearia.lisboasamu.com/",
-      },
-    ],
     media: [
       {
         src: "/images/projects/codigo-s-negocios/banner.png",
@@ -101,6 +91,84 @@ export const projects: Project[] = [
   },
   {
     number: "02",
+    name: "Site para clínica",
+    category: "WEB / HEALTH / APPOINTMENTS",
+    description:
+      "Landing page moderna para clínica de estética, com foco em presença digital profissional, apresentação de tratamentos, diferenciais da marca e agendamento online.",
+    stack: [
+      "Landing Page",
+      "Agendamento",
+      "Responsive Design",
+      "UI/UX",
+      "Next.js",
+    ],
+    year: "2026",
+    status: "LIVE",
+    href: "https://clinica.lisboasamu.com/clinica-lisboa/",
+    linkLabel: "Acessar site da clínica",
+    media: [
+      {
+        src: "/images/projects/clinica/mockup.png",
+        alt: "Mockup do site para clínica exibido em desktop e mobile.",
+        width: 1086,
+        height: 1448,
+      },
+    ],
+  },
+  {
+    number: "03",
+    name: "Site para veterinária",
+    category: "WEB / VETERINARY / APPOINTMENTS",
+    description:
+      "Site institucional e de agendamento para clínica veterinária, com linguagem acolhedora, apresentação de serviços, experiência mobile e foco em confiança para os tutores.",
+    stack: [
+      "Landing Page",
+      "Agendamento",
+      "Responsive Design",
+      "Branding",
+      "Next.js",
+    ],
+    year: "2026",
+    status: "LIVE",
+    href: "https://veterinaria.lisboasamu.com/aurora/",
+    linkLabel: "Acessar site da veterinária",
+    media: [
+      {
+        src: "/images/projects/veterinaria/mockup.png",
+        alt: "Mockup do site para veterinária exibido em desktop e mobile.",
+        width: 1254,
+        height: 1254,
+      },
+    ],
+  },
+  {
+    number: "04",
+    name: "Site para barbearia",
+    category: "WEB / BARBERSHOP / APPOINTMENTS",
+    description:
+      "Site de alta presença visual para barbearia, com identidade forte, vitrine dos serviços, experiência responsiva e fluxo de agendamento online.",
+    stack: [
+      "Landing Page",
+      "Agendamento",
+      "Responsive Design",
+      "Brand Identity",
+      "Next.js",
+    ],
+    year: "2026",
+    status: "LIVE",
+    href: "https://barbearia.lisboasamu.com/barbearia-lisboa/",
+    linkLabel: "Acessar site da barbearia",
+    media: [
+      {
+        src: "/images/projects/barbearia/mockup.png",
+        alt: "Mockup do site para barbearia exibido em desktop e mobile.",
+        width: 1086,
+        height: 1448,
+      },
+    ],
+  },
+  {
+    number: "05",
     name: "Operational Automation Suite",
     category: "AUTOMATION / OPERATIONS",
     description:
@@ -121,7 +189,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    number: "03",
+    number: "06",
     name: "Operational AI Assistants",
     category: "AI / AUTOMATION",
     description:
