@@ -3577,6 +3577,700 @@ body::after {
   }
 }
 
+/* =========================================================
+   IMPACT CALCULATOR / CÓDIGO-S
+   ========================================================= */
+
+.impact-page {
+  --impact-purple: #7b2cbf;
+  --impact-purple-light: #9d4edd;
+  --impact-green: #a9bf52;
+  --impact-green-strong: #78a33d;
+}
+
+.impact-hero {
+  position: relative;
+  padding: clamp(5rem, 11vw, 9rem) 0;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  background:
+    radial-gradient(
+      circle at 85% 10%,
+      rgba(123, 44, 191, 0.14),
+      transparent 28rem
+    ),
+    radial-gradient(
+      circle at 5% 90%,
+      rgba(120, 163, 61, 0.08),
+      transparent 28rem
+    );
+}
+
+.impact-hero-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.3fr)
+    minmax(260px, 0.55fr);
+  gap: clamp(3rem, 9vw, 8rem);
+  align-items: end;
+}
+
+.impact-hero h1 {
+  margin: 1rem 0 0;
+  font-size: clamp(4rem, 12vw, 9rem);
+  line-height: 0.78;
+  letter-spacing: -0.075em;
+  text-transform: uppercase;
+}
+
+.impact-hero h1 span {
+  display: block;
+  color: transparent;
+  -webkit-text-stroke:
+    1px
+    rgba(247, 247, 243, 0.7);
+}
+
+.impact-hero > .shell > div > p {
+  max-width: 620px;
+  margin: 2rem 0 0;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  line-height: 1.6;
+}
+
+.impact-hero aside {
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border);
+}
+
+.impact-hero aside span,
+.impact-micro {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  color: var(--highlight);
+}
+
+.impact-hero aside strong {
+  display: block;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.impact-hero aside p {
+  margin: 0.8rem 0 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
+
+/* CALCULATOR */
+
+.impact-section {
+  padding: clamp(4rem, 9vw, 8rem) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.impact-shell {
+  width: min(
+    100%,
+    calc(1000px + var(--page-pad) * 2)
+  );
+}
+
+.impact-progress {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: clamp(2.5rem, 6vw, 4rem);
+  border-top: 1px solid var(--border);
+}
+
+.impact-progress-item {
+  padding: 1rem 0;
+  display: flex;
+  gap: 0.7rem;
+  border-bottom: 1px solid var(--border);
+  opacity: 0.4;
+}
+
+.impact-progress-item + .impact-progress-item {
+  padding-left: 1rem;
+  border-left: 1px solid var(--border);
+}
+
+.impact-progress-item span,
+.impact-progress-item strong {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+}
+
+.impact-progress-item span {
+  color: var(--highlight);
+}
+
+.impact-progress-item.is-active {
+  opacity: 1;
+  border-bottom-color: var(--highlight);
+}
+
+.impact-panel {
+  animation: impact-enter 280ms ease both;
+}
+
+.impact-panel-heading {
+  max-width: 680px;
+  margin-bottom: clamp(2rem, 6vw, 4rem);
+}
+
+.impact-panel-heading h2,
+.impact-result-heading h2 {
+  margin: 0.8rem 0 0;
+  font-size: clamp(2.7rem, 7vw, 5rem);
+  line-height: 0.92;
+  letter-spacing: -0.055em;
+  text-transform: uppercase;
+}
+
+.impact-panel-heading p,
+.impact-result-heading p {
+  max-width: 620px;
+  margin: 1rem 0 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+
+/* SOLUTION SELECT */
+
+.impact-solutions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid var(--border);
+}
+
+.impact-solution {
+  min-height: 190px;
+  padding: 1.3rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem;
+  align-items: start;
+
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.impact-solution:nth-child(odd) {
+  border-right: 1px solid var(--border);
+}
+
+.impact-solution > span {
+  color: var(--highlight);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6rem;
+}
+
+.impact-solution strong {
+  display: block;
+  font-size: clamp(1.25rem, 3vw, 1.8rem);
+}
+
+.impact-solution p {
+  max-width: 320px;
+  margin: 0.7rem 0 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.impact-solution svg {
+  color: var(--muted);
+}
+
+.impact-solution:hover,
+.impact-solution.is-selected {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(169, 191, 82, 0.07),
+      rgba(123, 44, 191, 0.035)
+    );
+}
+
+.impact-solution.is-selected {
+  border-bottom-color: var(--highlight);
+}
+
+.impact-solution.is-selected svg {
+  color: var(--highlight);
+}
+
+
+/* FORM */
+
+.impact-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.impact-field {
+  min-width: 0;
+  min-height: 145px;
+  padding: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--background);
+}
+
+.impact-field > span {
+  max-width: 390px;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.impact-field > small {
+  margin-top: 0.35rem;
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+.impact-input-wrap {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.impact-input-wrap b {
+  flex: 0 0 auto;
+  color: var(--highlight);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+}
+
+.impact-input-wrap input,
+.impact-field select {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--foreground);
+  font: inherit;
+}
+
+.impact-input-wrap input {
+  padding: 0.55rem 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.impact-input-wrap:focus-within {
+  border-bottom-color: var(--highlight);
+}
+
+.impact-field select {
+  margin-top: 1.6rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.impact-field select option {
+  background: var(--background);
+}
+
+.impact-range-field {
+  position: relative;
+}
+
+.impact-range-field > strong {
+  margin-top: 1.4rem;
+  color: var(--highlight);
+  font-size: 2rem;
+}
+
+.impact-range-field input {
+  width: 100%;
+  margin-top: 1rem;
+  accent-color: var(--highlight);
+}
+
+.impact-range-field > div {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.35rem;
+}
+
+.impact-range-field small {
+  color: var(--muted);
+  font-family: var(--font-mono), monospace;
+}
+
+.impact-navigation {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.impact-navigation-end {
+  justify-content: flex-end;
+}
+
+
+/* RESULT */
+
+.impact-result {
+  animation: impact-enter 320ms ease both;
+}
+
+.impact-result-heading {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 3rem;
+}
+
+.impact-result-heading svg {
+  color: var(--highlight);
+}
+
+.impact-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+}
+
+.impact-metric {
+  min-height: 190px;
+  padding: clamp(1.2rem, 4vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.impact-metric strong {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  line-height: 0.9;
+  letter-spacing: -0.055em;
+}
+
+.impact-metric span {
+  max-width: 290px;
+  margin-top: 2rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.impact-metric.is-primary {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(169, 191, 82, 0.11),
+      rgba(123, 44, 191, 0.04)
+    );
+}
+
+.impact-metric.is-primary strong {
+  color: var(--highlight);
+}
+
+
+/* COMPARISON */
+
+.impact-comparison,
+.impact-projection {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.impact-comparison > div {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1.4rem;
+}
+
+.impact-bar-row header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.65rem;
+}
+
+.impact-bar-row header span {
+  color: var(--muted);
+}
+
+.impact-bar {
+  height: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.impact-bar i {
+  display: block;
+  height: 100%;
+  background: var(--impact-purple);
+  transition: width 500ms cubic-bezier(.16, 1, .3, 1);
+}
+
+.impact-bar-row.is-after .impact-bar i {
+  background: var(--highlight);
+}
+
+
+/* PROJECTION */
+
+.impact-projection-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.impact-projection-heading strong {
+  font-size: 0.78rem;
+}
+
+.impact-projection-grid {
+  margin-top: 1.4rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--border);
+}
+
+.impact-projection-grid > div {
+  padding: 1rem 0;
+  display: grid;
+  gap: 0.65rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.impact-projection-grid > div + div {
+  padding-left: 1rem;
+  border-left: 1px solid var(--border);
+}
+
+.impact-projection-grid span {
+  color: var(--muted);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.58rem;
+}
+
+.impact-projection-grid strong {
+  font-size: clamp(1rem, 2vw, 1.35rem);
+}
+
+
+/* TRANSPARENCY */
+
+.impact-disclaimer {
+  margin-top: 3rem;
+  padding: 1.2rem;
+  border-left: 2px solid var(--highlight);
+  background: rgba(169, 191, 82, 0.035);
+}
+
+.impact-disclaimer strong {
+  color: var(--highlight);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+}
+
+.impact-disclaimer p {
+  max-width: 760px;
+  margin: 0.55rem 0 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
+
+/* CTA */
+
+.impact-final-cta {
+  position: relative;
+  margin-top: 4rem;
+  padding: clamp(2rem, 6vw, 4rem);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(123, 44, 191, 0.16),
+      transparent 24rem
+    ),
+    linear-gradient(
+      135deg,
+      rgba(169, 191, 82, 0.07),
+      transparent 55%
+    );
+}
+
+.impact-final-cta h3 {
+  max-width: 680px;
+  margin: 1rem 0 0;
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+.impact-final-cta > p {
+  max-width: 650px;
+  margin: 1.2rem 0 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.impact-final-cta > div {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.impact-reset {
+  margin-top: 1.5rem;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+}
+
+.impact-reset:hover {
+  color: var(--highlight);
+}
+
+
+/* CTA NA HOME */
+
+.services-cta-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 1rem 1.5rem;
+}
+
+
+@keyframes impact-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@media (max-width: 760px) {
+  .impact-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .impact-hero h1 {
+    font-size: clamp(3.2rem, 17vw, 5rem);
+  }
+
+  .impact-progress-item {
+    display: grid;
+    gap: 0.3rem;
+  }
+
+  .impact-solutions,
+  .impact-form,
+  .impact-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .impact-solution:nth-child(odd) {
+    border-right: 0;
+  }
+
+  .impact-solution {
+    min-height: 160px;
+  }
+
+  .impact-field {
+    min-height: 135px;
+  }
+
+  .impact-result-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .impact-result-heading > svg {
+    display: none;
+  }
+
+  .impact-projection-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .impact-projection-grid > div:nth-child(3) {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .impact-navigation {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .impact-navigation .button {
+    width: 100%;
+  }
+
+  .impact-navigation .button-primary {
+    order: -1;
+  }
+
+  .impact-final-cta > div {
+    display: grid;
+  }
+
+  .impact-final-cta .button {
+    width: 100%;
+  }
+
+  .services-cta-links {
+    justify-content: flex-start;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
